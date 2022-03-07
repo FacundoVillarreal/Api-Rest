@@ -1,16 +1,19 @@
-const express = require('express');
-const app = express();
+import app from './app'
 
+async function main () {
 
+    await app.listen(3000);
+    console.log("Server on port 3000");
 
-//middlewares
-app.use(express.json());
+}
+main();
+
+// const app = require('./app');
 
 
 //routes
-app.use(require('./routes/index.routes'));
 
 //server
-app.listen(3000, ()=>{
-    console.log("Server on port 3000")
-})
+// app.listen(3000, ()=>{
+//     console.log("Server on port 3000")
+// })
